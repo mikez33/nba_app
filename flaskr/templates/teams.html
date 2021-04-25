@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Simulate 2 Teams Playing {% endblock %}</h1>
+<form method="post">
+    <label for="form-control">Team A</label>
+    <select class="form-control" name="TeamA" id="TeamA">
+        <option>Miami Heat</option>
+        <option>Los Angelos Lakers</option>
+        <option>New York Knicks</option>
+    </select>
+    <br>
+    <div class="form-group">
+        <label for="win_pctA">Team A Win Percentage</label>
+        <input type="win_pctA" class="form-control" name="win_pctA" placeholder="Enter a Percentage">
+        <small id="emailHelp" class="form-text text-muted">Team Overall Percentage at the Current Time</small>
+    </div>
+
+    <label for="form-control">Team B</label>
+    <select class="form-control" name="TeamA" id="TeamA">
+        <option>Miami Heat</option>
+        <option>Los Angelos Lakers</option>
+        <option>New York Knicks</option>
+    </select>
+    <br>
+    <div class="form-group">
+        <label for="win_pctB">Team B Win Percentage</label>
+        <input type="win_pctB" class="form-control" name="win_pctB" placeholder="Enter a Percentage">
+        <small id="emailHelp" class="form-text text-muted">Team Overall Percentage at the Current Time</small>
+    </div>
+    <label for="form-control">Home Team</label>
+    <select class="form-control" name="Home" id="Home">
+        <option>Team A</option>
+        <option>Team B</option>
+    </select>
+    <br>
+    <button type="button" class="btn btn-primary" style="margin-bottom: 20px">Primary</button>
+    <br>
+</form>
+{% endblock %}
