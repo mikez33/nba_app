@@ -1,6 +1,54 @@
 {% extends 'base.html' %}
 
-{% block content%}
-<h1>Hello World</h1>
-
-{% endblock%}
+{% block content %}
+<style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+    body {
+        background-image: url('static/images/background6.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        background-position: center;
+        background-size: cover;
+    }
+    .button-create {
+        background-color: #17408B;
+        color: white;
+        border-radius: 10px;
+        font-size: 25px;
+        margin-top: 20%;
+        margin-bottom: 10%;
+        width: 160%;
+        right: 30%;
+        position: relative;
+    }
+    .title {
+        display: flex;
+        justify-content: center;
+        margin-top: 20%;
+        color: white;
+        font-size: 60px;
+    }
+    .main {
+        display: flex;
+        justify-content: center;
+        margin-top: 2%;
+        text-align: center;
+    }
+</style>
+<h1 class="title">{% block title %} NBA Game Simulator {% endblock %}</h1>
+<div class="container main d-flex justify-content-center">
+    <form method="post">
+        <button type="submit" class="btn btn-lg button-create" name="submit_button" value="simulate">
+            Simulate
+        </button>
+        <br>
+    </form>
+    {% block page_content %}{% endblock %}
+</div>
+{% endblock %}

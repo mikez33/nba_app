@@ -1,9 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{% block title %} Simulate 2 Teams Playing {% endblock %}</h1>
+<style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+    body {
+        background-image: url('../static/images/background5.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        background-position: center;
+        background-size: cover;
+    }
+    .button-create {
+        background-color: #17408B;
+        color: white;
+        border-radius: 10px;
+        margin-bottom: 10%;
+        width: 10%;
+    }
+</style>
+<br>
+<h1 style="color: white;">{% block title %} Simulate 2 Teams Playing {% endblock %}</h1>
 <form method="post">
-    <label for="form-control">Team A</label>
+    <label for="form-control" style="color: white;">Team A</label>
     <select class="form-control" name="TeamA" id="TeamA">
         <option>Miami Heat</option>
         <option>Los Angelos Lakers</option>
@@ -11,30 +35,37 @@
     </select>
     <br>
     <div class="form-group">
-        <label for="win_pctA">Team A Win Percentage</label>
+        <label for="win_pctA" style="color: white;">Team A Win Percentage</label>
         <input type="win_pctA" class="form-control" name="win_pctA" placeholder="Enter a Percentage">
         <small id="emailHelp" class="form-text text-muted">Team Overall Percentage at the Current Time</small>
     </div>
 
-    <label for="form-control">Team B</label>
-    <select class="form-control" name="TeamA" id="TeamA">
+    <label for="form-control" style="color: white;">Team B</label>
+    <select class="form-control" name="TeamB" id="TeamB">
         <option>Miami Heat</option>
         <option>Los Angelos Lakers</option>
         <option>New York Knicks</option>
     </select>
     <br>
     <div class="form-group">
-        <label for="win_pctB">Team B Win Percentage</label>
+        <label for="win_pctB" style="color: white;">Team B Win Percentage</label>
         <input type="win_pctB" class="form-control" name="win_pctB" placeholder="Enter a Percentage">
         <small id="emailHelp" class="form-text text-muted">Team Overall Percentage at the Current Time</small>
     </div>
-    <label for="form-control">Home Team</label>
+    <label for="form-control" style="color: white;">Home Team</label>
     <select class="form-control" name="Home" id="Home">
         <option>Team A</option>
         <option>Team B</option>
     </select>
     <br>
-    <button type="button" class="btn btn-primary" style="margin-bottom: 20px">Primary</button>
+    <label for="form-control" style="color: white;">Number of Simulations</label>
+    <select class="form-control" name="simulations" id="simulations">
+        <option>1</option>
+        <option>10</option>
+        <option>20</option>
+    </select>
+    <br>
+    <button type="submit" class="btn button-create" style="margin-bottom: 20px" name="submit_button" value="Submit">Submit</button>
     <br>
 </form>
 {% endblock %}
