@@ -22,7 +22,9 @@ def teams():
             teamA = str(request.form['TeamA'])
             win_pctA = float(request.form['win_pctA'])
             teamB = str(request.form['TeamB'])
-            win_pctB = float(request.form['win_pctB'])
+            # Not Used
+            win_pctB = 0.50
+            # win_pctB = float(request.form['win_pctB'])
             home = str(request.form['Home'])
             simulations = int(request.form['simulations'])
             if home == 'TeamA':

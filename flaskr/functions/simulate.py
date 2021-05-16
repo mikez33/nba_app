@@ -4,6 +4,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split, GroupKFold, KFold
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.svm import SVC
 
 teams = {
     'Miami Heat': 1610612748,
@@ -68,7 +71,12 @@ def generate_model():
     X = df_all[['team_id', 'w_pct', 'a_team_id', 'is_home']]
     y = df_all['wl']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
-    model = RandomForestClassifier()
+    # model = RandomForestClassifier()
+    model = make_pipeline(StandardScaler(), 
+                        SVC(gamma='auto', 
+                            tol=0.03, 
+                            kernel='linear',
+                            class_weight='balanced'))
     model.fit(X_train, y_train)
 
 def get_indices(teamA, teamB, df):
